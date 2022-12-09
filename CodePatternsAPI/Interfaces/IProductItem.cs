@@ -9,7 +9,7 @@
         public int Price { get; set; }
         public string ImageUrl { get; set; }
         public bool IsOneSale { get; set; }
-        public int? SaleProcent { get; set; }
-        public int? SalePrice { get; set; }
+        public int SaleProcent { get; set; }
+        //public int SalePrice { get; set; }
     }
 }

@@ -54,10 +54,10 @@ namespace CodePatternsAPI.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("money");
 
-                    b.Property<decimal?>("SalePrice")
+                    b.Property<decimal>("SalePrice")
                         .HasColumnType("money");
 
-                    b.Property<int?>("SaleProcent")
+                    b.Property<int>("SaleProcent")
                         .HasColumnType("int");
 
                     b.Property<string>("Size")
