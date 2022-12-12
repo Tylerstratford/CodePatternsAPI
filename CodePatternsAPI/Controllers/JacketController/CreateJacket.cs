@@ -1,31 +1,29 @@
 ﻿using CodePatternsAPI.Data;
-using CodePatternsAPI.Entities;
-using CodePatternsAPI.Factories;
 using CodePatternsAPI.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
+using CodePatternsAPI.Entities;
+using CodePatternsAPI.Factories;
 
-namespace CodePatternsAPI.Controllers
+namespace CodePatternsAPI.Controllers.JacketController
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CreateDress : ControllerBase
+    public class CreateJacket : ControllerBase
     {
-        public readonly SqlContext _context;
+        private readonly SqlContext _context;
 
-        public CreateDress(SqlContext context)
+        public CreateJacket(SqlContext context)
         {
             _context = context;
         }
 
         [HttpPost]
-        public async Task<ActionResult<DressModel>> DressEntity(DressModel model)
+        public async Task<ActionResult<JacketModel>> JacketEntity(JacketModel model)
         {
-            //use GenericFactory DIP
-            var _dress = DressFactory.CreateDress(
+            var _jacket = JacketFactory.CreateJacket(
                 Guid.NewGuid(),
-                model.Sleaves,
+                model.Season,
                 model.Name,
                 model.Description,
                 model.Category,
@@ -37,11 +35,10 @@ namespace CodePatternsAPI.Controllers
                 model.Color
                 );
 
-            _context.Dress.Add(_dress);
-
+            _context.Jacket.Add(_jacket);
             await _context.SaveChangesAsync();
 
-            return Ok(_dress);
+            return Ok(_jacket);
         }
     }
 }

@@ -4,26 +4,24 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace CodePatternsAPI.Controllers
+namespace CodePatternsAPI.Controllers.DressController
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class GetJacketController : ControllerBase
+    public class GetDressController : ControllerBase
     {
-        //write code here
 
         private readonly SqlContext _context;
 
-        public GetJacketController(SqlContext context)
+        public GetDressController(SqlContext context)
         {
             _context = context;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<JacketEntity>>> GetAllJackets()
+        public async Task<ActionResult<IEnumerable<DressEntity>>> GetAllDress()
         {
-            return await _context.Jacket.ToListAsync();
+            return await _context.Dress.ToListAsync();
         }
-
     }
 }
