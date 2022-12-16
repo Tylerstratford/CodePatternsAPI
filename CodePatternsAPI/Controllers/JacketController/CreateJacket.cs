@@ -22,14 +22,14 @@ namespace CodePatternsAPI.Controllers.JacketController
         public async Task<ActionResult<JacketModel>> JacketEntity(JacketModel model)
         {
             var _jacket = JacketFactory.CreateJacket(
-                Guid.NewGuid(),
+                //Guid.NewGuid(),
                 model.Season,
                 model.Name,
                 model.Description,
                 model.Category,
                 model.Price,
                 model.ImageUrl,
-                model.IsOneSale,
+                model.IsOnSale,
                 model.SaleProcent,
                 model.Size,
                 model.Color

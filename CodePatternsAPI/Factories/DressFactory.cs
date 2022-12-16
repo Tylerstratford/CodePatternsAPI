@@ -7,18 +7,18 @@ namespace CodePatternsAPI.Factories
 internal static class DressFactory
     {
         public static DressEntity CreateDress(
-            Guid id, string occasions, string name, string description, string category, int price, string imgurl, bool isOnSale, int saleProcent, string size, string color)
+             string occasions, string name, string description, string category, int price, string imgurl, bool isOnSale, int saleProcent, string size, string color)
         {
             return new DressEntity()
             {
-                Id = id,
+                //Id = id,
                 Occasions = occasions,
                 Name = name,
                 Description = description,
                 Category = category,
                 Price = price,
                 ImageUrl = imgurl,
-                IsOneSale = isOnSale,
+                IsOnSale = isOnSale,
                 SaleProcent = saleProcent,
                 Size = size,
                 Color = color,

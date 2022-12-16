@@ -13,5 +13,6 @@ namespace CodePatternsAPI.Data
 
         public DbSet<DressEntity> Dress { get; set; }
         public DbSet<JacketEntity> Jacket { get; set; }
+
     }
 }

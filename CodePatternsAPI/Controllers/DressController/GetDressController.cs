@@ -13,10 +13,7 @@ namespace CodePatternsAPI.Controllers.DressController
 
         private readonly SqlContext _context;
 
-        public GetDressController(SqlContext context)
-        {
-            _context = context;
-        }
+        public GetDressController(SqlContext context) { _context = context; }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<DressEntity>>> GetAllDress()

@@ -17,24 +17,21 @@ namespace CodePatternsAPI.Controllers.DressController
     {
         public readonly SqlContext _context;
 
-        public CreateDress(SqlContext context)
-        {
-            _context = context;
-        }
+        public CreateDress(SqlContext context) { _context = context; }
 
         [HttpPost]
         public async Task<ActionResult<DressModel>> DressEntity(DressModel model)
         {
-            //use GenericFactory DIP
+            //use Factory DIP
             var _dress = DressFactory.CreateDress(
-                Guid.NewGuid(),
+                //Guid.NewGuid(),
                 model.Occasions,
                 model.Name,
                 model.Description,
                 model.Category,
                 model.Price,
                 model.ImageUrl,
-                model.IsOneSale,
+                model.IsOnSale,
                 model.SaleProcent,
                 model.Size,
                 model.Color

@@ -16,13 +16,13 @@ namespace CodePatternsAPI.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Sleaves = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Occasions = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Category = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Price = table.Column<decimal>(type: "money", nullable: false),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsOneSale = table.Column<bool>(type: "bit", nullable: false),
+                    IsOnSale = table.Column<bool>(type: "bit", nullable: false),
                     SaleProcent = table.Column<int>(type: "int", nullable: false),
                     SalePrice = table.Column<decimal>(type: "money", nullable: false),
                     Size = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -44,9 +44,9 @@ namespace CodePatternsAPI.Migrations
                     Category = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Price = table.Column<decimal>(type: "money", nullable: false),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsOneSale = table.Column<bool>(type: "bit", nullable: false),
-                    SaleProcent = table.Column<int>(type: "int", nullable: true),
-                    SalePrice = table.Column<decimal>(type: "money", nullable: true),
+                    IsOnSale = table.Column<bool>(type: "bit", nullable: false),
+                    SaleProcent = table.Column<int>(type: "int", nullable: false),
+                    SalePrice = table.Column<decimal>(type: "money", nullable: false),
                     Size = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Color = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },

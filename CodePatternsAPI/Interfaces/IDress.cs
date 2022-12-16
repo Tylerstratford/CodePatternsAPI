@@ -6,6 +6,6 @@
     public interface IDress : IProductItem, IBaseProductAttributes
 
     {
-        string Ocassions { get; set; }
+        string Occasions { get; set; }
     }
 }

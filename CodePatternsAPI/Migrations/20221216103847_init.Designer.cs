@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CodePatternsAPI.Migrations
 {
     [DbContext(typeof(SqlContext))]
-    [Migration("20221209133405_init")]
+    [Migration("20221216103847_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -47,10 +47,14 @@ namespace CodePatternsAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsOneSale")
+                    b.Property<bool>("IsOnSale")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Occasions")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -64,10 +68,6 @@ namespace CodePatternsAPI.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Size")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Sleaves")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -98,7 +98,7 @@ namespace CodePatternsAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsOneSale")
+                    b.Property<bool>("IsOnSale")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
@@ -108,10 +108,11 @@ namespace CodePatternsAPI.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("money");
 
-                    b.Property<decimal?>("SalePrice")
+                    b.Property<decimal>("SalePrice")
                         .HasColumnType("money");
 
                     b.Property<int?>("SaleProcent")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Season")

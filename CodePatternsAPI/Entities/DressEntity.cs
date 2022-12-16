@@ -8,6 +8,7 @@ namespace CodePatternsAPI.Entities
     {
         [Key]
         public Guid Id { get; set; }
+        [Required]
         public string Occasions { get; set; } = null!;
 
         [Required]
@@ -23,9 +24,12 @@ namespace CodePatternsAPI.Entities
         public int Price { get; set; }
 
         [Required]
-
         public string ImageUrl { get; set; } = null!;
-        public bool IsOneSale { get; set; } = false;
+
+        [Required]
+        public bool IsOnSale { get; set; } = false;
+
+        [Required]
         public int SaleProcent { get; set; }
 
 

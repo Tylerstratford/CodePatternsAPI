@@ -13,10 +13,7 @@ namespace CodePatternsAPI.Controllers.JacketController
 
         private readonly SqlContext _context;
 
-        public GetJacketController(SqlContext context)
-        {
-            _context = context;
-        }
+        public GetJacketController(SqlContext context) { _context = context; }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<JacketEntity>>> GetAllJackets()

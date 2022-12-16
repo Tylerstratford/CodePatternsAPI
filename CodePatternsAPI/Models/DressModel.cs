@@ -4,7 +4,7 @@ namespace CodePatternsAPI.Models
 {
     public class DressModel : BaseProduct, IDress
     {
-        public string Ocassions { get; set; } = null!;
+        public string Occasions { get; set; } = null!;
         public string Size { get; set; } = null!;
         public string Color { get; set; } = null!;
     }
