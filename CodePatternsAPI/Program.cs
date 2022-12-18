@@ -1,4 +1,7 @@
 using CodePatternsAPI.Data;
+using CodePatternsAPI.Factories;
+using CodePatternsAPI.Interfaces;
+using CodePatternsAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +13,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<SqlContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("DefaultString")));
+
+//Used for the IDressEntityFactory and DressEntityFactory DIP
+builder.Services.AddScoped<IDressEntityFactory, DressEntityFactory>();
+//Used for the IDressEntityFactory and DressEntityFactory DIP
+builder.Services.AddScoped<IJacketEntityFactory, JacketEntityFactory>();
 
 
 var app = builder.Build();

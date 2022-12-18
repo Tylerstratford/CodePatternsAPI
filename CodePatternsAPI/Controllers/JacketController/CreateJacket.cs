@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using CodePatternsAPI.Entities;
 using CodePatternsAPI.Factories;
+using CodePatternsAPI.Interfaces;
 
 namespace CodePatternsAPI.Controllers.JacketController
 {
@@ -12,17 +13,18 @@ namespace CodePatternsAPI.Controllers.JacketController
     public class CreateJacket : ControllerBase
     {
         private readonly SqlContext _context;
+        private readonly IJacketEntityFactory _factory;
 
-        public CreateJacket(SqlContext context)
+        public CreateJacket(SqlContext context, IJacketEntityFactory factory)
         {
             _context = context;
+            _factory = factory;
         }
 
         [HttpPost]
         public async Task<ActionResult<JacketModel>> JacketEntity(JacketModel model)
         {
-            var _jacket = JacketFactory.CreateJacket(
-                //Guid.NewGuid(),
+            var _jacket = _factory.CreateJacket(
                 model.Season,
                 model.Name,
                 model.Description,

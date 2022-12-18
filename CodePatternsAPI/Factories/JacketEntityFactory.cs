@@ -1,18 +1,15 @@
 ﻿using CodePatternsAPI.Entities;
 using CodePatternsAPI.Interfaces;
-using CodePatternsAPI.Models;
 
 namespace CodePatternsAPI.Factories
 {
-internal static class DressFactory
+    public class JacketEntityFactory : IJacketEntityFactory
     {
-        public static DressEntity CreateDress(
-             string occasions, string name, string description, string category, int price, string imgurl, bool isOnSale, int saleProcent, string size, string color)
+        public JacketEntity CreateJacket(string season, string name, string description, string category, int price, string imgurl, bool isOnSale, int saleProcent, string size, string color)
         {
-            return new DressEntity()
+            return new JacketEntity()
             {
-                //Id = id,
-                Occasions = occasions,
+                Season = season,
                 Name = name,
                 Description = description,
                 Category = category,
@@ -22,11 +19,8 @@ internal static class DressFactory
                 SaleProcent = saleProcent,
                 Size = size,
                 Color = color,
-                SalePrice = price - (price * saleProcent / 100),
-
+                SalePrice = price - (price * saleProcent / 100)
             };
         }
-
     }
-
 }
