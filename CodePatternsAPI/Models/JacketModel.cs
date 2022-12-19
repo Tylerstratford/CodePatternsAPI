@@ -1,5 +1,10 @@
 ﻿using CodePatternsAPI.Interfaces;
 
+
+//SRP - Class for Jacket  - self explanitory.
+
+//LSP/OCP - The class inherits from only those that are necessary -  the Base product and further IJacket, which has properties unique to Jackets using the IJackets interface that used other other interfaces
+//The idea was to "simulate" that baseproduct was created and then a developer was to implement dresses without modifying existing code
 namespace CodePatternsAPI.Models
 {
     public class JacketModel : BaseProduct, IJackets
@@ -8,23 +13,6 @@ namespace CodePatternsAPI.Models
         public string Season { get; set; } = null!;
         public string Size { get; set; } = null!;
         public string Color { get; set; } = null!;
-        //private int salePrice;
-        //public string Season { get; set; } = null!;
-        //public Guid Id { get;set; }
-        //public string Name { get;set; } = null!;
-        //public string Description { get; set; } = null!; 
-        //public string Category { get; set; } = null!;
-        //public int Price { get;set; }
-        //public string ImageUrl { get; set; } = null!;
-        //public bool IsOneSale { get;set; }
-        //public int SaleProcent { get;set; }
-        //public int SalePrice
-        //{
-        //    get { return salePrice; }
-        //    set { salePrice = Price * SaleProcent / 100; }
-        //}
-        //public string Size { get; set; } = null!;
-        //public string Color { get; set; } = null!;
 
     }
 }

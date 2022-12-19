@@ -29,7 +29,6 @@ namespace CodePatternsAPI.Controllers.DressController
         [HttpPost]
         public async Task<ActionResult<DressModel>> DressEntity(DressModel model)
         {
-            //use Factory DIP
             var _dress = _factory.CreateDress(
                 model.Occasions,
                 model.Name,

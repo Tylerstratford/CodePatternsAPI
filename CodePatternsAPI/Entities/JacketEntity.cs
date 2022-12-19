@@ -1,6 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
+//SRP - Responsible for the database and tables for the product Jacket
+
+
 namespace CodePatternsAPI.Entities
 {
     public class JacketEntity

@@ -1,6 +1,9 @@
 ﻿using CodePatternsAPI.Entities;
 using CodePatternsAPI.Interfaces;
 
+//SRP/DIP - Creating a new instance of JacketEntity of which is then injected and used with IJacketEntity into the controller for creation of a new product to be used with dependency inversion. 
+
+
 namespace CodePatternsAPI.Factories
 {
     public class JacketEntityFactory : IJacketEntityFactory

@@ -6,6 +6,11 @@ using CodePatternsAPI.Entities;
 using CodePatternsAPI.Factories;
 using CodePatternsAPI.Interfaces;
 
+
+//SRP - To keep things simple, I decided to have seperate controllers for creating different products to fulfill SRP. Could also have a controller for creating any type product as both createDress and createJacket are very similar, they however use different Factories.
+
+//DIP This controller also fulfills dependency inversion principle with the injection of IJacketEntityFactory
+
 namespace CodePatternsAPI.Controllers.JacketController
 {
     [Route("api/[controller]")]

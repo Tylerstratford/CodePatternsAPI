@@ -1,7 +1,10 @@
 ﻿using CodePatternsAPI.Entities;
 
 
-//Interface in order to fulfill DIP -  The create jacket controller is dependent in this interface rather than an conrete implemenation of DressEntity, thus fulfilling DIP
+//DIP/SRP - Interface to be used in abstraction and an injection into the dress controller, the controller is dependeng on this interface rather than a concrete implementaion of DressEntity -  thus fulfilling DIP.
+
+//ISP - The interface is segregated into it's own providing properties unique to itself.
+
 
 namespace CodePatternsAPI.Interfaces
 {

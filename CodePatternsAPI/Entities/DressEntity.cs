@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
+//SRP - Responsible for the database and tables for the product Dress
+
 namespace CodePatternsAPI.Entities
 {
     public class DressEntity
